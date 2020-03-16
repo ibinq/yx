@@ -1,5 +1,5 @@
 spring:
-  # ÅäÖÃÊı¾İÔ´
+  # é…ç½®æ•°æ®æº
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://49.233.201.62:3306/yx?useUnicode=true&characterEncoding=utf-8
@@ -7,27 +7,30 @@ spring:
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
-# mybatis-plusÏà¹ØÅäÖÃ
+  banner:
+    charset: utf-8
+    location: config/banner.txt
+# mybatis-plusç›¸å…³é…ç½®
 mybatis-plus:
-  # xmlÉ¨Ãè£¬¶à¸öÄ¿Â¼ÓÃ¶ººÅ»òÕß·ÖºÅ·Ö¸ô£¨¸æËß Mapper Ëù¶ÔÓ¦µÄ XML ÎÄ¼şÎ»ÖÃ£©
+  # xmlæ‰«æï¼Œå¤šä¸ªç›®å½•ç”¨é€—å·æˆ–è€…åˆ†å·åˆ†éš”ï¼ˆå‘Šè¯‰ Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ï¼‰
   mapper-locations: classpath:mapper/*.xml
-  # ÒÔÏÂÅäÖÃ¾ùÓĞÄ¬ÈÏÖµ,¿ÉÒÔ²»ÉèÖÃ
+  # ä»¥ä¸‹é…ç½®å‡æœ‰é»˜è®¤å€¼,å¯ä»¥ä¸è®¾ç½®
   global-config:
     db-config:
-      #Ö÷¼üÀàĞÍ  auto:"Êı¾İ¿âID×ÔÔö" 1:"ÓÃ»§ÊäÈëID",2:"È«¾ÖÎ¨Ò»ID (Êı×ÖÀàĞÍÎ¨Ò»ID)", 3:"È«¾ÖÎ¨Ò»ID UUID";
+      #ä¸»é”®ç±»å‹  auto:"æ•°æ®åº“IDè‡ªå¢" 1:"ç”¨æˆ·è¾“å…¥ID",2:"å…¨å±€å”¯ä¸€ID (æ•°å­—ç±»å‹å”¯ä¸€ID)", 3:"å…¨å±€å”¯ä¸€ID UUID";
       id-type: auto
-      #×Ö¶Î²ßÂÔ IGNORED:"ºöÂÔÅĞ¶Ï"  NOT_NULL:"·Ç NULL ÅĞ¶Ï")  NOT_EMPTY:"·Ç¿ÕÅĞ¶Ï"
+      #å­—æ®µç­–ç•¥ IGNORED:"å¿½ç•¥åˆ¤æ–­"  NOT_NULL:"é NULL åˆ¤æ–­")  NOT_EMPTY:"éç©ºåˆ¤æ–­"
       field-strategy: NOT_EMPTY
-      #Êı¾İ¿âÀàĞÍ
+      #æ•°æ®åº“ç±»å‹
       db-type: MYSQL
     logic-delete-value: 1
     logic-not-delete-value: 0
   configuration:
-    # ÊÇ·ñ¿ªÆô×Ô¶¯ÍÕ·åÃüÃû¹æÔòÓ³Éä:´ÓÊı¾İ¿âÁĞÃûµ½JavaÊôĞÔÍÕ·åÃüÃûµÄÀàËÆÓ³Éä
+    # æ˜¯å¦å¼€å¯è‡ªåŠ¨é©¼å³°å‘½åè§„åˆ™æ˜ å°„:ä»æ•°æ®åº“åˆ—ååˆ°Javaå±æ€§é©¼å³°å‘½åçš„ç±»ä¼¼æ˜ å°„
     map-underscore-to-camel-case: true
-    # Èç¹û²éÑ¯½á¹ûÖĞ°üº¬¿ÕÖµµÄÁĞ£¬Ôò MyBatis ÔÚÓ³ÉäµÄÊ±ºò£¬²»»áÓ³ÉäÕâ¸ö×Ö¶Î
+    # å¦‚æœæŸ¥è¯¢ç»“æœä¸­åŒ…å«ç©ºå€¼çš„åˆ—ï¼Œåˆ™ MyBatis åœ¨æ˜ å°„çš„æ—¶å€™ï¼Œä¸ä¼šæ˜ å°„è¿™ä¸ªå­—æ®µ
     call-setters-on-nulls: true
-    # Õâ¸öÅäÖÃ»á½«Ö´ĞĞµÄsql´òÓ¡³öÀ´£¬ÔÚ¿ª·¢»ò²âÊÔµÄÊ±ºò¿ÉÒÔÓÃ
+    # è¿™ä¸ªé…ç½®ä¼šå°†æ‰§è¡Œçš„sqlæ‰“å°å‡ºæ¥ï¼Œåœ¨å¼€å‘æˆ–æµ‹è¯•çš„æ—¶å€™å¯ä»¥ç”¨
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 server:
