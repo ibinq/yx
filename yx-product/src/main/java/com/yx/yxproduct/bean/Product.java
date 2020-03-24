@@ -1,4 +1,4 @@
-package com.yx.bean;
+package com.yx.yxproduct.bean;
 
 import com.baomidou.mybatisplus.annotations.TableLogic;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -7,48 +7,37 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
  * @author ZhouBing
  * @version 1.0
- * @date 2020/3/13 16:09
+ * @date 2020/3/19 14:24
  */
 @Data
-@TableName("ums_size")
-public class Size implements Serializable {
+@TableName("pms_product")
+public class Product implements Serializable {
 
-    /**
-     * 尺寸id
-     */
     private Long id;
 
-    /**
-     * 用户id
-     */
-    private Long uid;
+    private Long categoryId;
 
-    private String name;
+    private String title;
 
-    private Integer sex;
+    private String subTitle;
 
-    private Integer height;
+    private BigDecimal price;
 
-    private Integer weight;
+    private String mainImage;
 
-    private Integer shoulder;
+    private String subImage;
 
-    private Integer bust;
+    private Integer stock;
 
-    private Integer waistline;
+    private String detail;
 
-    private Integer hipline;
-
-    private Integer footLength;
-
-    private Integer footLine;
-
-    private Integer select;
+    private Boolean coupon;
 
     @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
@@ -60,6 +49,4 @@ public class Size implements Serializable {
 
     @TableLogic
     private Integer deleted;
-
-
 }

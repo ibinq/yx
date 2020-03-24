@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.yx.bean.Admin;
+import com.yx.bean.Permission;
 import com.yx.dao.AdminDao;
 import com.yx.service.AdminService;
 import com.yx.yxcommon.api.Result;
@@ -54,5 +55,20 @@ public class AdminServiceImpl extends ServiceImpl<AdminDao, Admin> implements Ad
         //密码加密验证
 
         return Result.ok( );
+    }
+
+    @Override
+    public Admin getAdminByUsername(String username) {
+        return adminDao.getAdminByUsername(username);
+    }
+
+    @Override
+    public List<Permission> getPermissionList(Long id) {
+        return adminDao.getPermissionList(id);
+    }
+
+    @Override
+    public List<Permission> getPermissionListByUsername(String username) {
+        return null;
     }
 }

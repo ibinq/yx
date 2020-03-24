@@ -54,3 +54,6 @@ mybatis-plus:
 
 server:
   port: 8081
+jwt:
+  secret:
+  expiration:

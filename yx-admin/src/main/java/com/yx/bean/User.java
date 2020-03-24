@@ -1,6 +1,10 @@
 package com.yx.bean;
 
+import com.baomidou.mybatisplus.annotations.TableLogic;
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,6 +16,7 @@ import java.time.LocalDateTime;
  * @date 2020/3/13 16:30
  */
 @Data
+@TableName("ums_user")
 public class User implements Serializable {
 
     private Long id;
@@ -21,10 +26,17 @@ public class User implements Serializable {
     private String email;
     private Integer sex;
     private LocalDate birthday;
-    private Boolean deleted;
     private String avatar;
     private Integer status;
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
-    private LocalDateTime updateTIme;
+
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateTime;
+
+    @TableLogic
+    private Integer deleted;
 
 }

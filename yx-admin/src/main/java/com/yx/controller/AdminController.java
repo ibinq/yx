@@ -69,6 +69,11 @@ public class AdminController {
         return adminService.deleteById(id) ? Result.ok() : Result.fail();
     }
 
+    @ApiOperation(value = "hello demo")
+    @GetMapping("hello")
+    public Result hello(){
+        return Result.ok();
+    }
 
     /**
      * 获取所有管理员

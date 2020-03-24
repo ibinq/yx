@@ -10,4 +10,10 @@
         OR phone = #{name}
         OR email = #{name}
     </select>
+<!--    <select id="getPermissionList" resultType="com.yx.bean.Permission">-->
+<!--        select * from permission as p-->
+<!--        left join admin_permission as ap on p.id=ap.pid-->
+<!--        left join admin a on a.id = ap .aid-->
+<!--        where a.id=#{id}-->
+<!--    </select>-->
 </mapper>
