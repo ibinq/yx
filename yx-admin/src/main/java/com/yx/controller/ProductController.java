@@ -37,13 +37,11 @@ public class ProductController     {
 
     @PostMapping("productByCategoryId")
     public Result productByCategoryId(Long id){
-
         return productService.productByCategoryId(id);
     }
 
     @PostMapping("search")
     public Result search(String content){
-
         return productService.search(content);
     }
 
@@ -55,7 +53,6 @@ public class ProductController     {
     })
     public Result changeStatus( Long id,Integer status){
         return productService.changeStatus(id,status);
-//        return Result.ok();
     }
 
     @PostMapping("delete")
@@ -65,18 +62,17 @@ public class ProductController     {
     })
     public Result delete( Long id ){
         return Result.ok(productService.deleteById(id));
-//        return Result.ok();
     }
 
     @PostMapping("add")
     @ApiOperation(value = "添加商品",notes = "添加商品",response = Result.class)
-    public Result add(   ProductVo productVo){
+    public Result add( ProductVo productVo){
         return productService.save(productVo);
     }
 
     @PostMapping("getById")
     @ApiOperation(value = "查询单个根据id",notes = "查询单个根据id",response = Result.class)
-    public Result getById(   Long id){
+    public Result getById(Long id){
         return productService.getById(id);
     }
 }
