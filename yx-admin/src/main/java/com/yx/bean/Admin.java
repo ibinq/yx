@@ -24,7 +24,7 @@ public class Admin implements Serializable {
     private String phone;
     private String email;
     private String avatar;
-    private Integer status;
+    private Boolean status;
     @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;

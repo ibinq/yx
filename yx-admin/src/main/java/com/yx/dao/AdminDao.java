@@ -18,4 +18,6 @@ public interface AdminDao extends BaseMapper<Admin> {
     Admin getAdminByUsername(String name);
 
     List<Permission> getPermissionList(Long id);
+
+    List<Permission> getPermissionListByUsername(String username);
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yx.dao.MenuDao">
+
+    <update id="changeStatus"  >
+        update ums_menu c1
+        set c1.status=#{status}
+        where c1.id=#{id}
+    </update>
+<!--    <update id="changeStatus"  >-->
+<!--        update ums_menu c1-->
+<!--        left join ums_menu c2 on (c1.parent_id = c2.id or c1.id=c2.parent_id)-->
+<!--        set c1.status=#{status} ,c2.status=#{status}-->
+<!--        where c1.id=#{id}-->
+<!--    </update>-->
+</mapper>

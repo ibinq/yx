@@ -5,6 +5,7 @@ import com.yx.bean.Admin;
 import com.yx.bean.Permission;
 import com.yx.bean.User;
 import com.yx.yxcommon.api.Result;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -25,4 +26,6 @@ public interface AdminService extends IService<Admin> {
     List<Permission> getPermissionList(Long id);
 
     List<Permission> getPermissionListByUsername(String username);
+
+    UserDetails loadUserByUsername(String username);
 }
