@@ -9,10 +9,7 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ZhouBing
@@ -74,5 +71,11 @@ public class ProductController     {
     @ApiOperation(value = "查询单个根据id",notes = "查询单个根据id",response = Result.class)
     public Result getById(Long id){
         return productService.getById(id);
+    }
+
+    @GetMapping("{pid}")
+    public Result getStock(@PathVariable  Long pid){
+        //productService.getStock(pid);
+        return Result.ok();
     }
 }
